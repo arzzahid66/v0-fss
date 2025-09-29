@@ -46,18 +46,6 @@ export function ContactSection() {
         throw insertError
       }
 
-      // Send notification email to admin
-      try {
-        await fetch('/api/send-notification', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(feedbackData)
-        })
-      } catch (emailError) {
-        console.error('Failed to send notification email:', emailError)
-        // Don't fail the form submission if email fails
-      }
-
       // Reset form and show success message
       setFormData({ name: "", email: "", subject: "", message: "" })
       setShowSuccess(true)

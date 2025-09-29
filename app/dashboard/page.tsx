@@ -184,41 +184,16 @@ export default function Dashboard() {
     })
   }
 
+  // Reply functionality temporarily removed
   const sendReply = async () => {
     if (!replyState.selectedMessage) return
-
-    setReplyState(prev => ({ ...prev, isSending: true }))
-
-    try {
-      const response = await fetch('/api/send-reply', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          to: replyState.selectedMessage.email,
-          subject: replyState.replyMessage,
-          message: replyState.replyMessage,
-          originalMessage: replyState.selectedMessage.message,
-          originalSubject: replyState.selectedMessage.subject
-        })
-      })
-
-      if (response.ok) {
-        setReplyState({
-          isOpen: false,
-          selectedMessage: null,
-          replyMessage: "",
-          isSending: false
-        })
-        alert('Reply sent successfully!')
-      } else {
-        alert('Failed to send reply. Please try again.')
-      }
-    } catch (error) {
-      console.error('Error sending reply:', error)
-      alert('Failed to send reply. Please try again.')
-    } finally {
-      setReplyState(prev => ({ ...prev, isSending: false }))
-    }
+    alert('Reply functionality is currently unavailable')
+    setReplyState({
+      isOpen: false,
+      selectedMessage: null,
+      replyMessage: "",
+      isSending: false
+    })
   }
 
   if (!state.isAuthenticated) {

@@ -38,10 +38,7 @@
   --sidebar-accent-foreground: oklch(0.25 0.02 240);
   --sidebar-border: oklch(0.92 0.01 240);
   --sidebar-ring: oklch(0.45 0.18 240);
-  --font-inter: "Inter", sans-serif;
-  --font-poppins: "Poppins", monospace;
-  /* Added Urdu font variable */
-  --font-urdu: "Noto Nastaliq Urdu", serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
 .dark {
@@ -80,11 +77,8 @@
 }
 
 @theme inline {
-  /* Updated font variables to match new Inter and Poppins fonts */
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-poppins);
-  /* Added Urdu font support */
-  --font-urdu: var(--font-urdu);
+  /* Updated font variables */
+  --font-sans: var(--font-poppins);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -234,10 +228,4 @@
   transition: opacity 0.5s ease-out;
 }
 
-/* Added Urdu text styling */
-.font-urdu {
-  font-family: var(--font-urdu);
-  direction: rtl;
-  text-align: center;
-  line-height: 1.8;
-}
+
