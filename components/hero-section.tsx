@@ -86,10 +86,7 @@ export function HeroSection() {
 
               {/* Added Urdu text */}
               <div className="text-center space-y-2">
-                <p
-                  className="text-lg text-white/90 font-urdu leading-relaxed"
-                  style={{ fontFamily: "Noto Nastaliq Urdu, serif", direction: "rtl" }}
-                >
+                <p className="text-lg text-white/90 font-urdu leading-relaxed">
                   نا کتابوں کا انبار، نا بیگ کا بوجھ۔
                 </p>
                 <p

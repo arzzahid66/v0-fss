@@ -39,6 +39,7 @@
   --sidebar-border: oklch(0.92 0.01 240);
   --sidebar-ring: oklch(0.45 0.18 240);
   --font-poppins: "Poppins", sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
 }
 
 .dark {
@@ -79,6 +80,7 @@
 @theme inline {
   /* Updated font variables */
   --font-sans: var(--font-poppins);
+  --font-urdu: var(--font-urdu);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -141,6 +143,12 @@
 
   p {
     @apply text-pretty leading-relaxed;
+  }
+
+  /* Urdu font class */
+  .font-urdu {
+    font-family: var(--font-urdu);
+    direction: rtl;
   }
 }
 
