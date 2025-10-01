@@ -87,7 +87,7 @@ export function HeroSection() {
               {/* Added Urdu text */}
               <div className="text-center space-y-2">
                 <p className="text-lg text-white/90 font-urdu leading-relaxed">
-                   نا کتابوں کا انبار، نہ بیگ کا بوجھ 
+                   نہ کتابوں کا انبار ، نہ بیگ کا بوجھ 
                 </p>
                 <p
                   className="text-lg text-white/90 font-semibold leading-relaxed"
