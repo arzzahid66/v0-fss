@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge"
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
 
 export function Footer() {
@@ -95,36 +95,17 @@ export function Footer() {
           <div>
             <h4 className="text-base md:text-lg font-semibold mb-4 md:mb-6">Connect With Us</h4>
             <div className="space-y-3 md:space-y-4">
-              <p className="text-primary-foreground/80 text-xs md:text-sm">Follow us on social media for updates and news</p>
+              <p className="text-primary-foreground/80 text-xs md:text-sm">Follow us on Facebook for updates and news</p>
 
-              <div className="flex space-x-3 md:space-x-4">
+              <div>
                 <a
-                  href="#"
-                  className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                  aria-label="Facebook"
+                  href="https://www.facebook.com/Fatimaschoolcollege"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-primary-foreground/10 rounded-full hover:bg-primary-foreground/20 transition-colors"
+                  aria-label="Visit our Facebook page"
                 >
-                  <Facebook className="w-4 h-4 md:w-5 md:h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-4 h-4 md:w-5 md:h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4 md:w-5 md:h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="w-4 h-4 md:w-5 md:h-5" />
+                  <Facebook className="w-6 h-6 md:w-7 md:h-7" />
                 </a>
               </div>
 
