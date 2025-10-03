@@ -12,7 +12,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // Type definitions for the user_feedback table
 export interface UserFeedback {
-  id?: number
+  id: string
   full_name: string
   email: string
   subject: string

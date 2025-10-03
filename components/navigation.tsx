@@ -39,47 +39,47 @@ export function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+          <div className="flex items-center space-x-2 md:space-x-3">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-primary/20">
               <Image src="/images/logo.png" alt="Fatima School Logo" fill className="object-cover" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-white">Fatima School & College</h1>
+              <h1 className="text-base md:text-xl font-bold text-white">Fatima School & College</h1>
               <p className="text-xs text-white/80">Play, Laugh, Learn</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-white hover:text-white/80 transition-colors font-medium"
+              className="text-sm lg:text-base text-white hover:text-white/80 transition-colors font-medium"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-white hover:text-white/80 transition-colors font-medium"
+              className="text-sm lg:text-base text-white hover:text-white/80 transition-colors font-medium"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-white hover:text-white/80 transition-colors font-medium"
+              className="text-sm lg:text-base text-white hover:text-white/80 transition-colors font-medium"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-white hover:text-white/80 transition-colors font-medium"
+              className="text-sm lg:text-base text-white hover:text-white/80 transition-colors font-medium"
             >
               Contact
             </button>
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm lg:text-base px-4 py-2"
             >
               Get in Touch
             </Button>
@@ -98,35 +98,35 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full glass-effect border-t border-border/20">
-            <div className="px-4 py-6 space-y-4">
+          <div className="md:hidden absolute top-full left-0 w-full glass-effect border-t border-border/20 z-50">
+            <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="block w-full text-left text-white hover:text-white/80 transition-colors font-medium py-2"
+                className="block w-full text-left text-sm sm:text-base text-white hover:text-white/80 transition-colors font-medium py-2"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="block w-full text-left text-white hover:text-white/80 transition-colors font-medium py-2"
+                className="block w-full text-left text-sm sm:text-base text-white hover:text-white/80 transition-colors font-medium py-2"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("gallery")}
-                className="block w-full text-left text-white hover:text-white/80 transition-colors font-medium py-2"
+                className="block w-full text-left text-sm sm:text-base text-white hover:text-white/80 transition-colors font-medium py-2"
               >
                 Gallery
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="block w-full text-left text-white hover:text-white/80 transition-colors font-medium py-2"
+                className="block w-full text-left text-sm sm:text-base text-white hover:text-white/80 transition-colors font-medium py-2"
               >
                 Contact
               </button>
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-4"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-3 sm:mt-4 text-sm sm:text-base"
               >
                 Get in Touch
               </Button>

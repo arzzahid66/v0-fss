@@ -146,6 +146,34 @@ export default function Dashboard() {
     }
   }
 
+  const handleDeleteMessage = async (messageId: string) => {
+    if (!confirm('Are you sure you want to delete this message?')) return
+
+    try {
+      console.log('Attempting to delete message with ID:', messageId)
+
+      const { data, error } = await supabase
+        .from('user_feedback')
+        .delete()
+        .eq('id', messageId)
+        .select()
+
+      if (error) {
+        console.error('Supabase delete error:', error)
+        throw error
+      }
+
+      console.log('Delete response:', data)
+
+      // Update local state
+      setMessages(prev => prev.filter(msg => msg.id !== messageId))
+      alert('Message deleted successfully from database!')
+    } catch (error) {
+      console.error('Failed to delete message:', error)
+      alert(`Failed to delete message: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    }
+  }
+
   const filterMessages = () => {
     let filtered = [...messages]
 
@@ -506,21 +534,33 @@ export default function Dashboard() {
                   <div className="space-y-4">
                     {getPaginatedMessages().map((message) => (
                       <div key={message.id} className="border rounded-lg p-4 hover:bg-gray-50">
-                        <div className="flex justify-between items-start mb-2">
-                          <div>
+                        <div className="flex justify-between items-start mb-3">
+                          <div className="flex-1">
                             <h3 className="font-semibold text-lg">{message.full_name}</h3>
                             <p className="text-sm text-gray-600">{message.email}</p>
+                            <Badge variant="secondary" className="mt-2">
+                              Subject: {message.subject}
+                            </Badge>
                           </div>
-                          <div className="text-right">
+                          <div className="text-right flex flex-col items-end space-y-2">
                             <p className="text-sm text-gray-500">
                               {new Date(message.created_at!).toLocaleString()}
                             </p>
-                            <Badge variant="secondary" className="mt-1">
-                              {message.subject}
-                            </Badge>
+                            <Button
+                              variant="destructive"
+                              size="sm"
+                              onClick={() => handleDeleteMessage(message.id)}
+                              className="flex items-center space-x-1"
+                            >
+                              <Trash2 className="h-3 w-3" />
+                              <span>Delete</span>
+                            </Button>
                           </div>
                         </div>
-                        <p className="text-gray-700 whitespace-pre-wrap">{message.message}</p>
+                        <div className="mt-3 pt-3 border-t">
+                          <p className="text-sm font-medium text-gray-500 mb-1">Message:</p>
+                          <p className="text-gray-700 whitespace-pre-wrap">{message.message}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
